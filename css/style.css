@@ -90,7 +90,14 @@ div.codebox{
 	padding: 5px;
 	font-family: 'Source Code Pro', monospace;
 	background-color: #EFEFEF;
+	word-wrap: break-word;
 }
 ol>li{
 	margin-bottom: 10px;
+}
+div.col-md-9 div.panel-body{
+	overflow: hidden;
+}
+img.img-content{
+	max-width: 100%;
 }
