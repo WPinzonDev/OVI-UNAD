@@ -54,7 +54,7 @@
 				        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Funciones
 				        <span class="caret"></span></a>
 				        <ul class="dropdown-menu">
-				          <li><a href="conexion.html">Conexión a base a la DB</a></li>
+				          <li><a href="#">Conexión a base a la DB</a></li>
 				          <li><a href="#">Creación de registros en la BD</a></li>
 				          <li><a href="#">Lectura de registros de la BD</a></li>
 				          <li><a href="#">Modificación de registros en la DB</a></li>
@@ -73,11 +73,49 @@
 		<div class="row">
 			<div class="col-md-9">
 				<div class="panel panel-primary">
-				  <div class="panel-heading text-center">Programación WEB</div>
+				  <div class="panel-heading text-center">CONEXIÓN A LA BASE DE DATOS</div>
 				  <div class="panel-body">
 				  	<div class="row">
 				  		<div class="col-md-12">
-							Texto
+
+							Vincular una BD a una página web es realmente clave para sitios grandes e incluso los más pequeños. Normalmente se utilizan bases de datos como MySQL para generar dinámicamente contenido en las páginas, ahora bien, para llevarlo a la practica PHP permite que la conexión sea rápida y estable.
+							<p>
+							Establecer la vinculación requiere del siguiente procedimiento: 
+							</p>
+							<p>
+							1.	Abrir la página web que se requiere conectar a la base de datos en un editor de texto. 
+							</p>
+							<p>
+							2.	En el punto en el que quieres conectar, escribir "?php" para abrir un bloque de código PHP.
+							</p>
+							<p>
+							3.	Almacenar la conexión en una variable llamada $connection: <BR>
+      					<TEXTAREA rows="5" cols="80" name="txtconexion"
+      					>$connection = mysql_connect("servidor," "usuario," "contraseña") or die(mysql_error()); 
+      	$servidor = "localhost";
+      	$usuario = "root";
+      	$contrasena = "tu_contraseña";
+		</TEXTAREA><BR>
+		</p>
+
+					<tr>
+						<td colspan="2" class="img-header">
+							<img src="img/conexion.jpg" class="img" width="700" height="300">
+						</td>
+					</tr>
+							<p>
+							Cambiar "servidor" por el nombre del servidor del sitio web (normalmente es "localhost" pero no siempre) y cambia "usuario" y "contraseña" por el nombre de usuario y contraseña de la base de datos.
+							</p>
+							<p>
+							4.	Indicar el nombre de la base de datos utilizando la función "mysql_select_db" (cambia "databasename" por el nombre de la base de datos): mysql_select_db("databasename");
+							</p>
+							<p>
+							5.	Para almacenar la consulta SQL en una variable llamada $sql: $sql = "QUERY";
+							</p>
+							<p>
+							6.	Establecer una conexión a la base de datos con la función ($sql, $connection) o die(mysql_error());
+							</p>
+
 				  		</div>
 				  	</div>
 				  </div>
