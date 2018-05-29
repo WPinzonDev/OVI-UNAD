@@ -77,7 +77,58 @@
 				  <div class="panel-body">
 				  	<div class="row">
 				  		<div class="col-md-12">
-							Texto
+							<h3 class="text-primary">Conexión a la base de datos MYSQL</h3>
+							<p>
+								Para el ejercicio de conexión utilizaremos como referencia una base de datos con nombre (unad), dicha base de datos posee una unica tabla llamada usuarios, la cual tiene la siguiente estructura:
+							</p>
+							<p class="text-center">
+								<img src="../img/connection_db.png">
+							</p>
+							<p>
+								Pasos para realizar una conexion a una base de datos:
+								<ol>
+									<li>
+										Definir varibles con los datos de acceso al servidor MySQL como lo son el usuario, contraseña, servidor y el nombre de la base de datos.
+										<br>
+										<div class="codebox">
+											$user = 'root';<br>
+											$password = '';<br>
+											$dbname = 'unad';<br>
+											$server = 'localhost';
+										</div>
+									</li>
+									<li>
+										Despues utilizamos el contructor <span class="codeline">new PDO</span> el cual tiene la siguiente estructura:
+										<br>
+										<div class="codebox">
+											$db = new PDO('mysql:host='.$server.';dbname='.$dbname, $user, $password);
+										</div>
+										Con esto ya nos habremos conectado a la base de datos.
+									</li>
+									<li>
+										Para saber con exactitud si tenemos algun error o si nos hemos conectado a la base de datos correctamente utilizaremos <span class="codeline">try catch</span> con la exepción que nos proporciona pdo llamada <span class="codeline">PDOException</span>.
+									</li>
+								</ol>
+							</p>
+							<p>
+								El resultado final seria el siguiente:
+							</p>
+							<p>
+								<textarea class="code">
+<?php
+	try {
+		$user = 'root';
+		$password = '';
+		$dbname = 'unad';
+		$server = 'localhost';
+	    $db = new PDO('mysql:host='.$server.';dbname='.$dbname, $user, $password);
+	} catch (PDOException $e) {
+	    print "¡Error!: " . $e->getMessage() . "<br/>";
+	    die();
+	}
+?>
+								</textarea>
+							</p>
 				  		</div>
 				  	</div>
 				  </div>
