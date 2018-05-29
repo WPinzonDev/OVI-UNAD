@@ -1,4 +1,4 @@
-var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+var editor = CodeMirror.fromTextArea(document.getElementsByClassName("code")[0], {
   lineNumbers: true,
   theme: 'icecoder',
   readOnly: true
