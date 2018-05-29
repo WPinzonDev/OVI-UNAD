@@ -90,18 +90,15 @@
 							</p>
 							<p>
 							3.	Almacenar la conexión en una variable llamada $connection: <BR>
-      					<TEXTAREA rows="5" cols="80" name="txtconexion"
-      					>$connection = mysql_connect("servidor," "usuario," "contraseña") or die(mysql_error()); 
-      	$servidor = "localhost";
-      	$usuario = "root";
-      	$contrasena = "tu_contraseña";
-		</TEXTAREA><BR>
-		</p>
+      					<textarea id="code" name="code" rows="5" cols="80">
+      					$connection = mysql_connect("servidor," "usuario," "contraseña") or die(mysql_error()); 
+				      	$servidor = "localhost";
+				      	$usuario = "root";
+				      	$contrasena = "tu_contraseña";
+						</textarea>
+						</p>
 
 					<tr>
-						<td colspan="2" class="img-header">
-							<img src="img/conexion.jpg" class="img" width="700" height="300">
-						</td>
 					</tr>
 							<p>
 							Cambiar "servidor" por el nombre del servidor del sitio web (normalmente es "localhost" pero no siempre) y cambia "usuario" y "contraseña" por el nombre de usuario y contraseña de la base de datos.
