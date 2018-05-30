@@ -83,16 +83,9 @@
 							</p>
 							<textarea class="code">
 <?php
-	try {
-		$user = 'root';
-		$password = '';
-		$dbname = 'unad';
-		$server = 'localhost';
-	    $db = new PDO('mysql:host='.$server.';dbname='.$dbname, $user, $password);
-	} catch (PDOException $e) {
-	    print "¡Error!: " . $e->getMessage() . "<br/>";
-	    die();
-	}
+	
+		$conexion=mysqli_connect("localhost","root","","unad") or
+    die("Problemas con la conexión");
 ?>
 								</textarea>
 													
