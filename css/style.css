@@ -86,12 +86,6 @@ span.codeline{
 	font-family: 'Source Code Pro', monospace;
 	background-color: #EFEFEF;
 }
-div.codebox{
-	padding: 5px;
-	font-family: 'Source Code Pro', monospace;
-	background-color: #EFEFEF;
-	word-wrap: break-word;
-}
 ol>li{
 	margin-bottom: 10px;
 }
@@ -100,4 +94,8 @@ div.col-md-9 div.panel-body{
 }
 img.img-content{
 	max-width: 100%;
+}
+.CodeMirror {
+  border: 1px solid #eee;
+  height: auto;
 }

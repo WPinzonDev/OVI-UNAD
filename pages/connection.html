@@ -90,19 +90,16 @@
 									<li>
 										Definir varibles con los datos de acceso al servidor MySQL como lo son el usuario, contraseña, servidor y el nombre de la base de datos.
 										<br>
-										<div class="codebox">
-											$user = 'root';<br>
-											$password = '';<br>
-											$dbname = 'unad';<br>
-											$server = 'localhost';
-										</div>
+										<textarea id="code3">
+$user = 'root';<br>
+$password = '';<br>
+$dbname = 'unad';<br>
+$server = 'localhost';</textarea>
 									</li>
 									<li>
 										Despues utilizamos el contructor <span class="codeline">new PDO</span> el cual tiene la siguiente estructura:
 										<br>
-										<div class="codebox">
-											$db = new PDO('mysql:host='.$server.';dbname='.$dbname, $user, $password);
-										</div>
+										<textarea id="code2">$db = new PDO('mysql:host='.$server.';dbname='.$dbname, $user, $password);</textarea>
 										Con esto ya nos habremos conectado a la base de datos.
 									</li>
 									<li>
@@ -114,7 +111,7 @@
 								El resultado final seria el siguiente:
 							</p>
 							<p>
-								<textarea class="code">
+								<textarea id="code1">
 <?php
 	try {
 		$user = 'root';
@@ -126,8 +123,7 @@
 	    print "¡Error!: " . $e->getMessage() . "<br/>";
 	    die();
 	}
-?>
-								</textarea>
+?></textarea>
 							</p>
 				  		</div>
 				  	</div>
@@ -176,6 +172,22 @@
 			</div>
 		</div>
 	</footer>
-	<script src="../js/scripts.js"></script>
+	<script>
+		var editor = CodeMirror.fromTextArea(document.getElementById("code1"), {
+		  lineNumbers: true,
+		  theme: 'icecoder',
+		  readOnly: true
+		});
+		var editor = CodeMirror.fromTextArea(document.getElementById("code2"), {
+		  lineNumbers: true,
+		  theme: 'icecoder',
+		  readOnly: true
+		});
+		var editor = CodeMirror.fromTextArea(document.getElementById("code3"), {
+		  lineNumbers: true,
+		  theme: 'icecoder',
+		  readOnly: true
+		});
+	</script>
 </body>
 </html>
