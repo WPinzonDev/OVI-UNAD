@@ -73,11 +73,127 @@
 		<div class="row">
 			<div class="col-md-9">
 				<div class="panel panel-primary">
-				  <div class="panel-heading text-center">Programación WEB</div>
+				  <div class="panel-heading text-center">Eliminación de Registros de la Base de Datos </div>
 				  <div class="panel-body">
 				  	<div class="row">
 				  		<div class="col-md-12">
-							Texto
+							Procedimiento: 
+							<p>
+							1.	Se debe indicar el procedimiento de conexión de la base de datos, con los datos correspondientes, Usuario, Contraseña y Servidor, para el ejercicio se utiliza el siguiente código: 
+							</p>
+							<textarea class="code">
+<?php
+	try {
+		$user = 'root';
+		$password = '';
+		$dbname = 'unad';
+		$server = 'localhost';
+	    $db = new PDO('mysql:host='.$server.';dbname='.$dbname, $user, $password);
+	} catch (PDOException $e) {
+	    print "¡Error!: " . $e->getMessage() . "<br/>";
+	    die();
+	}
+?>
+								</textarea>
+													
+							<p>
+							2.	Se crea el formulario para visualizar, creando los campos para insertar información y los botones para los procedimiento (Buscar y eliminar)
+							</p>
+							
+<p>
+							<textarea class="code">
+<div >
+<form action="index.php" method="post">
+Ingrese Cedula:
+<input type="text" name="cc" ><br>
+Ingrese Nombre:
+<input type="text" name="nombre" ><br>
+Ingrese Apellido:
+<input type="text" name="apellido" ><br>
+Ingrese Correo:
+<input type="text" name="correo" ><br>
+Ingrese Celular:
+<input type="text" name="celular"><br>
+Ingrese Ciudad:
+<input type="text" name="ciudad" ><br>
+Ingrese Sexo:
+<input type="text" name="sexo" ><br>
+<input type="submit" name="Guardar" value="Guardar" >
+<input type="submit" name="Buscar" value="Buscar" >
+<input type="submit" name="Eliminar" value="Eliminar" >
+<input type="submit" name="Modificar" value="Modificar" >
+</div> 
+							</textarea>
+								</p>
+							<p>
+							3.	Se genera la consulta de la base de datos, indicando cualquiera de los datos solicitados (CC, Nombre, Apellido, Correo, Celular, Ciudad, Sexo) como se indica en el siguiente procedimiento: 
+							</p>
+							<p>
+						<tr>
+						<td colspan="1" class="img-header">
+							<img src="img/eliminacion.jpg" class="img" width="800" height="500">
+						</td>
+					</tr>
+							</p>
+
+							<p>
+							<textarea class="code">
+<?php
+
+
+		$conexion=mysqli_connect("localhost","root","","unad") or
+    die("Problemas con la conexión");
+if(isset($_POST['Buscar'])){
+
+
+  $registros=mysqli_query($conexion, "select Id,cc,Nombre,Apellido,Correo,Celular,Ciudad,Sexo from usuarios
+                        where cc='$_REQUEST[cc]' or Nombre='$_REQUEST[nombre]' or Correo='$_REQUEST[correo]' or Celular='$_REQUEST[celular]'or Sexo='$_REQUEST[sexo]'")or
+  die("Problemas en el select:".mysqli_error($conexion));
+if ($reg=mysqli_fetch_array($registros))
+
+{
+echo '<input type="text" name="id" value="'.$reg[0].'">';
+echo '<input type="text" name="cc" value="'.$reg[1].'">';
+echo '<input type="text" name="nombre" value="'.$reg[2].'">';
+echo '<input type="text" name="apellido" value="'.$reg[3].'">';
+echo '<input type="text" name="correo" value="'.$reg[4].'">';
+echo '<input type="text" name="celular" value="'.$reg[5].'">';
+echo '<input type="text" name="ciudad" value="'.$reg[6].'">';
+echo '<input type="text" name="sexo" value="'.$reg[7].'">';
+
+mysqli_close($conexion);
+}
+}
+?>
+							</textarea>
+							</p>
+							<p>
+							4.	El código para procedimiento de eliminación permite, realizar la búsqueda inicial y posteriormente su eliminación: 
+							</p>
+							<p>
+							<textarea class="code">
+<?php
+
+
+		$conexion=mysqli_connect("localhost","root","","unad") or
+    die("Problemas con la conexión");
+
+if(isset($_POST['Eliminar'])){
+	mysqli_query($conexion,"delete from usuarios where Id='$_REQUEST[id]'") or
+    die("Problemas en el select:".mysqli_error($conexion));
+  echo "Se efectuó el borrado .";
+	}
+
+?>
+						</textarea>
+						</p>
+						<p>
+						<tr>
+						<td colspan="1" class="img-header">
+							<img src="img/borrado.jpg" class="img" width="800" height="500">
+						</td>
+					</tr>
+					</p>
 				  		</div>
 				  	</div>
 				  </div>
