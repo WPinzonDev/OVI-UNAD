@@ -77,7 +77,76 @@
 				  <div class="panel-body">
 				  	<div class="row">
 				  		<div class="col-md-12">
-							Texto
+							<h3 class="text-primary">Insertar registros en la base de datos </h3>
+							<p>Pasos para insertar un registro en una base de datos:</p>
+							<p>
+								<ol>
+									<li>Haber establecido conexion con el servidor MySQL.<br>Si no ha realizado la conexión puede revisar el siguiente material - <a href="connection.html">Conexión a una DB</a>.</li>
+									<li>Crear un formulario html con los datos a insertar.
+									<br>
+									<textarea id="code1">
+<form action="insert.php" method="POST">
+	cc:<input type="number" name="cc"><br>
+	nombres:<input type="text" name="nombres"><br>
+	apellidos:<input type="text" name="apellidos"><br>
+	correo:<input type="email" name="correo"><br>
+	celular:<input type="number" name="celular"><br>
+	ciudad:<input type="text" name="ciudad"><br>
+	sexo:<input type="text" name="sexo"><br>
+	<input type="submit" value="Insertar registro">		
+</form></textarea>
+									</li>
+									<li>Recibir los datos enviados a través del formulario y almacenarlos en variables en el archivo insert.php
+									<br>
+									<textarea id="code2">
+$cc = $_POST['cc'];
+$nombres = $_POST['nombres'];
+$apellidos = $_POST['apellidos'];
+$correo = $_POST['correo'];
+$celular = $_POST['celular'];
+$ciudad = $_POST['ciudad'];
+$sexo = $_POST['sexo'];</textarea>
+									</li>
+									<li>Realizar el registro de los datos en la tabla usuarios de la base de datos <br>
+										<textarea id="code3">
+$sentencia = $db->prepare("INSERT INTO usuarios (cc, nombres, apellidos, correo, celular, ciudad, sexo) VALUES (:cc, :nombres, :apellidos, :correo, :celular, :ciudad, :sexo)");
+$sentencia->bindParam(':cc', $cc);
+$sentencia->bindParam(':nombres', $nombres);
+$sentencia->bindParam(':apellidos', $apellidos);
+$sentencia->bindParam(':correo', $correo);
+$sentencia->bindParam(':celular', $celular);
+$sentencia->bindParam(':ciudad', $ciudad);
+$sentencia->bindParam(':sexo', $sexo);
+$sentencia->execute();</textarea>
+									</li>
+									<li>Para validar si se realizo el insert de los datos en la base de datos podemos hacerlo con la siguiente condicional, la cual validara si se ejecuta la Query.
+									<br>
+									<textarea id="code4">
+if($sentencia->execute()){
+	echo 'Se han insertado los datos con exito.';
+}else{
+	echo 'No se han insertado los datos.';
+}</textarea>
+									</li>
+								</ol>
+							</p>
+							<p>
+								El codigo final seria el siguiente:
+								<textarea id="code5">
+$sentencia = $db->prepare("INSERT INTO usuarios (cc, nombres, apellidos, correo, celular, ciudad, sexo) VALUES (:cc, :nombres, :apellidos, :correo, :celular, :ciudad, :sexo)");
+$sentencia->bindParam(':cc', $cc);
+$sentencia->bindParam(':nombres', $nombres);
+$sentencia->bindParam(':apellidos', $apellidos);
+$sentencia->bindParam(':correo', $correo);
+$sentencia->bindParam(':celular', $celular);
+$sentencia->bindParam(':ciudad', $ciudad);
+$sentencia->bindParam(':sexo', $sexo);
+if($sentencia->execute()){
+	echo 'Se han insertado los datos con exito.';
+}else{
+	echo 'No se han insertado los datos.';
+}</textarea>
+							</p>
 				  		</div>
 				  	</div>
 				  </div>
@@ -125,6 +194,32 @@
 			</div>
 		</div>
 	</footer>
-	<script src="../js/scripts.js"></script>
+	<script>
+		var editor = CodeMirror.fromTextArea(document.getElementById("code1"), {
+		  lineNumbers: true,
+		  theme: 'icecoder',
+		  readOnly: true
+		});
+		var editor = CodeMirror.fromTextArea(document.getElementById("code2"), {
+		  lineNumbers: true,
+		  theme: 'icecoder',
+		  readOnly: true
+		});
+		var editor = CodeMirror.fromTextArea(document.getElementById("code3"), {
+		  lineNumbers: true,
+		  theme: 'icecoder',
+		  readOnly: true
+		});
+		var editor = CodeMirror.fromTextArea(document.getElementById("code4"), {
+		  lineNumbers: true,
+		  theme: 'icecoder',
+		  readOnly: true
+		});
+		var editor = CodeMirror.fromTextArea(document.getElementById("code5"), {
+		  lineNumbers: true,
+		  theme: 'icecoder',
+		  readOnly: true
+		});
+	</script>
 </body>
 </html>
