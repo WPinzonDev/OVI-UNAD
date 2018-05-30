@@ -77,9 +77,148 @@
 				  <div class="panel-body">
 				  	<div class="row">
 				  		<div class="col-md-12">
-							Texto
+				  			<h3 class="text-primary">Preparación del entorno</h3>
+				  			<p>
+					  			Instalación de un servidor web local, para trabajar con php y bases de datos de manera sencilla.	
+				  			</p>
+				  			<p>
+					  			Esto no permite ejecutar el código php, crear y manejar bases de datos sin tener que subirlas a un servidor remoto o  hosting.		
+				  			</p>
+				  			<p>
+				  				Nos permite ejecutar código php y probarlo de manera agil.
+				  			</p>
+				  			<p>
+				  				En este caso vamos a trabajar con XAMPP para Windows.
+				  			</p>
+				  			<p>
+				  				Abrimos nuestro buscador en el navegador y colocamos xampp o lo podemos descargar directamente del siguiente enlace:
 
-							<iframe width="640" height="360" src="https://www.youtube.com/embed/T6HK6WuDkx8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+				  				<a href="https://www.apachefriends.org/xampp-files/7.2.5/xampp-win32-7.2.5-0-VC15-installer.exe">Descarga XAMPP</a>
+				  			</p>
+				  			<p class="text-center">
+								<img src="../img/preparacion_entorno/xampp2.jpg" class="img-content">
+							</p>
+							<p>
+								Xampp es un servidor web compuesto de Apache, MariaDB y Php.
+							</p>
+							<p>
+								MariaDB es el sustituto de MySQL y trabajan de la misma forma, por lo tanto no debemos preocuparnos.
+							</p>
+				  			<p class="text-center">
+								<img src="../img/preparacion_entorno/xampp3.jpg" class="img-content">
+							</p>
+							<p>
+								Damos descargar en xampp para Windows y guardamos el instalador.
+								<a title="XAMPP" href="https://www.apachefriends.org/xampp-files/7.2.5/xampp-win32-7.2.5-0-VC15-installer.exe"><img src="../img/preparacion_entorno/xampp4.jpg" alt="" /></a>
+							</p>
+							<p class="text-center">
+								<img src="../img/preparacion_entorno/xampp5.jpg" class="img-content">
+							</p>
+							<p>
+								Una vez descargado, lo abrimos como administrador y damos permisos en lo que solicite durante la instalación, para no tener inconvenientes, en lo que corresponde con puertos y demás.
+							</p>
+							<p class="text-center">
+								<img src="../img/preparacion_entorno/xampp6.jpg" class="img-content">
+							</p>
+							<p>
+								Si nos sale este error es porque tenemos que tener activado el control de administrador como lo mencione anteriormente.
+							</p>
+							<p class="text-center">
+								<img src="../img/preparacion_entorno/xampp7.jpg" class="img-content">
+							</p>
+							<p class="text-center">
+								<img src="../img/preparacion_entorno/xampp8.jpg" class="img-content">
+							</p>
+							<p>
+								Damos click en siguiente.
+							</p>
+							<p class="text-center">
+								<img src="../img/preparacion_entorno/xampp9.jpg" class="img-content">
+							</p>
+							<p>
+								Seleccionamos todas las opciones y damos click en siguiente.
+							</p>
+							<p class="text-center">
+								<img src="../img/preparacion_entorno/xampp10.jpg" class="img-content">
+							</p>
+							<p>
+								Aquí podemos cambiar el directorio de instalación, pero se recomienda dejar esta opción por defecto.
+							</p>
+							<p>
+								Damos click en siguiente.
+							</p>
+							<p class="text-center">
+								<img src="../img/preparacion_entorno/xampp11.jpg" class="img-content">
+							</p>
+							<p>
+								Quitamos la selección de estos componentes adicionales.
+							</p>
+							<p class="text-center">
+								<img src="../img/preparacion_entorno/xampp12.jpg" class="img-content">
+							</p>
+							<p>
+								Damos en siguiente, Hasta que comience la instalación, que puede tardar algunos minutos.
+							</p>
+							<p class="text-center">
+								<img src="../img/preparacion_entorno/xampp13.jpg" class="img-content">
+							</p>
+							<p class="text-center">
+								<img src="../img/preparacion_entorno/xampp14.jpg" class="img-content">
+							</p>
+							<p>
+								Damos permisos.
+							</p>
+							<p class="text-center">
+								<img src="../img/preparacion_entorno/xampp15.jpg" class="img-content">
+							</p>
+							<p>
+								Después de terminada la instalación, nos aparece esta opción, la cual no seleccionaremos, para que no abra automáticamente el panel de control y abrirlo de forma manual, debido a que lo necesitamos en futuras ocasiones.
+							</p>
+							<p class="text-center">
+								<img src="../img/preparacion_entorno/xampp16.jpg" class="img-content">
+							</p>
+							<p>
+								De esta manera vamos a inicio y buscamos xampp
+							</p>
+							<p>
+								Le damos click de derecho, abrimos como administrador y le damos los permisos que necesite y se nos abrirá nuestro panel de control.
+							</p>
+							<p class="text-center">
+								<img src="../img/preparacion_entorno/xampp17.jpg" class="img-content">
+							</p>
+							<p>
+								En este panel de control tenemos que iniciar los servicios de apache y Mysql.
+							</p>
+							<p>
+								Por defecto apache aparece iniciado, caso de no estarlo simplemente le damos start para iniciar el servicio y hacemos lo mismo para MySQL.
+							</p>
+							<p class="text-center">
+								<img src="../img/preparacion_entorno/xampp18.jpg" class="img-content">
+							</p>
+							<p>
+								Después iniciado nos muestra los puertos que usa cada uno en caso de presentarse un error debemos revisar que otras aplicaciones que tenemos instaladas en nuestro PC, están ocupando o usando los mismo puertos.
+							</p>
+							<p class="text-center">
+								<img src="../img/preparacion_entorno/xampp19.jpg" class="img-content">
+							</p>
+							<p>
+								Este panel de control debemos abrirlo e iniciar los servicios cada vez que necesitemos trabajar con Php y MySQL.
+							</p>
+							<p>
+								Ahora vamos a nuestra carpeta de instalación que por defecto está ubicada en C:\xampp donde encontraremos la carpeta “htdocs” que es el directorio donde colocaremos todos nuestros proyectos web.
+							</p>
+							<p class="text-center">
+								<img src="../img/preparacion_entorno/xampp20.jpg" class="img-content">
+							</p>
+							<p class="text-center">
+								<img src="../img/preparacion_entorno/xampp21.jpg" class="img-content">
+							</p>
+							<p>
+								<iframe width="640" height="360" src="https://www.youtube.com/embed/T6HK6WuDkx8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+							</p>
+
+
+							
 				  		</div>
 				  	</div>
 				  </div>
