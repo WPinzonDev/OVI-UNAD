@@ -91,10 +91,10 @@
 										Definir varibles con los datos de acceso al servidor MySQL como lo son el usuario, contraseña, servidor y el nombre de la base de datos.
 										<br>
 										<textarea id="code3">
-											$user = 'root';<br>
-											$password = '';<br>
-											$dbname = 'unad';<br>
-											$server = 'localhost';</textarea>
+$user = 'root';<br>
+$password = '';<br>
+$dbname = 'unad';<br>
+$server = 'localhost';</textarea>
 									</li>
 									<li>
 										Despues utilizamos el contructor <span class="codeline">new PDO</span> el cual tiene la siguiente estructura:
@@ -112,18 +112,18 @@
 							</p>
 							<p>
 								<textarea id="code1">
-									<?php
-										try {
-											$user = 'root';
-											$password = '';
-											$dbname = 'unad';
-											$server = 'localhost';
-										    $db = new PDO('mysql:host='.$server.';dbname='.$dbname, $user, $password);
-										} catch (PDOException $e) {
-										    print "¡Error!: " . $e->getMessage() . "<br/>";
-										    die();
-										}
-									?></textarea>
+<?php
+	try {
+		$user = 'root';
+		$password = '';
+		$dbname = 'unad';
+		$server = 'localhost';
+	    $db = new PDO('mysql:host='.$server.';dbname='.$dbname, $user, $password);
+	} catch (PDOException $e) {
+	    print "¡Error!: " . $e->getMessage() . "<br/>";
+	    die();
+	}
+?></textarea>
 							</p>
 							<br>
 							<p>
